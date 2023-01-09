@@ -14,7 +14,14 @@ class CreateAboutsTable extends Migration
     public function up()
     {
         Schema::create('abouts', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->bigInteger('module_id')->unsigned();
+            $table->string('banner_image')->nullable();
+            $table->string('banner_title')->nullable();
+            $table->string('banner_sub_title')->nullable();
+            $table->string('title')->nullable();
+            $table->string('sub_title')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

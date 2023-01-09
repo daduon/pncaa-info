@@ -1,19 +1,25 @@
 @extends('admins.layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+<div class="container-fluid">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="das">
+                    <h5>Dashboard</h5>
+                </div>
+                <div class="card p-3">
+                    <div class="row">
+                        @for ($i =1; $i <= 4;$i++)
+                        <div class="col-3">
+                            <a href="{{ route('admin.about') }}">
+                                <div class="card">
+                                    <div class="card-body bg-info">About Us</div>
+                                </div>
+                            </a>
                         </div>
-                    @endif
-                        admin login
+                        @endfor
+                    </div>
                 </div>
             </div>
         </div>

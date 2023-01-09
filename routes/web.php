@@ -23,6 +23,8 @@ Route::get('/', function () {
 //Admin Routes
 Route::group(['namespace' => 'Admins'],function(){
 	Route::get('admin/home','HomeController@index')->name('admin.home');
+	Route::get('admin/about','AboutController@index')->name('admin.about');
+	Route::get('admin/about-update','AboutController@index')->name('admin.about.update');
 	Route::get('admin-login', 'Auth\LoginController@showLoginForm')->name('admin.login');
 	Route::post('admin-login', 'Auth\LoginController@login')->name('admin.login_account');
 });
