@@ -1,4 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/js/formAbout.js": "/js/formAbout.js",
+    "/js/formContact.js": "/js/formContact.js",
+    "/js/formEvent.js": "/js/formEvent.js",
+    "/js/formHome.js": "/js/formHome.js"
 }

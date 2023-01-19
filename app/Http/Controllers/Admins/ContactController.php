@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Admins;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\About;
+use App\Contact;
 
-class AboutController extends Controller
+class ContactController extends Controller
 {
-    public function updateAbout(Request $request,$id){
+    public function updateContact(Request $request,$id){
 
-		$about = new About();
+		$contact = new Contact();
 		$data = [
 			'banner_image' => $request->banner_image,
 			'banner_title' => $request->banner_title,
@@ -20,7 +20,7 @@ class AboutController extends Controller
 			'description' => $request->description,
 		];
 
-		$about->find($id)->update($data);
+		$contact->find($id)->update($data);
 		return response()->json($data, 200);
 	}
 }

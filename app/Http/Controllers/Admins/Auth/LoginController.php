@@ -8,6 +8,7 @@ use App\Admin;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -65,9 +66,15 @@ class LoginController extends Controller
         return $request->only($this->username(), 'password');
     }
 
-    public function __construct()
+    // public function __construct()
+    // {
+    //     $this->middleware('guest:admin')->except('logout');
+    // }
+    public function perform()
     {
-        $this->middleware('guest:admin')->except('logout');
+        Session::flush();
+        Auth::logout();
+        return redirect('admin-login');
     }
 
     protected function guard()

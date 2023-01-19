@@ -14,7 +14,7 @@ class CreateContactsTable extends Migration
     public function up()
     {
         Schema::create('contacts', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('banner_image')->nullable();
             $table->string('banner_title')->nullable();
             $table->string('banner_sub_title')->nullable();
@@ -22,6 +22,8 @@ class CreateContactsTable extends Migration
             $table->string('sub_title')->nullable();
             $table->string('description')->nullable();
             $table->integer('module_id')->unsigned();
+            $table->foreign('module_id')->references('id')->on('modules')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }
